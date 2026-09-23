@@ -1,0 +1,15 @@
+export { DigitalWorkforce as SimulationCanvas } from "@/components/workforce/DigitalWorkforce";
+export { DigitalWorkforce } from "@/components/workforce/DigitalWorkforce";
+export { PersonaNode } from "@/components/workforce/PersonaNode";
+export { PersonaCard, PersonaDetail } from "@/components/workforce/PersonaDetail";
+export { DecisionInput, DecisionCategoryGrid as DecisionCategory } from "@/components/decision/DecisionInput";
+export { ConversationPanel } from "@/components/simulation/ConversationPanel";
+export { ThoughtBubble } from "@/components/workforce/ThoughtBubble";
+export { RedTeamCard } from "@/components/simulation/RedTeamCard";
+export { RiskBadge, ImpactMeter, MetricCard, AnimatedNumber, EmptyState, LoadingState } from "@/components/ui/primitives";
+export { ScenarioSlider } from "@/components/simulation/ScenarioSlider";
+export { ScenarioComparison } from "@/components/charts/ScenarioComparison";
+export { DecisionReport } from "@/components/report/DecisionReport";
+export { CalibrationChart } from "@/components/charts/CalibrationChart";
+export { OrbitNavigation } from "@/components/layout/OrbitNavigation";
+export { PageTransition } from "@/components/layout/PageTransition";

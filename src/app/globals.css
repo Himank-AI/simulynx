@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #050608;
+  --surface: #0b0e12;
+  --surface-2: #11151b;
+  --elevated: #161b22;
+  --card: rgba(17, 21, 27, 0.7);
+  --ink: #f5f7fa;
+  --muted: #9ca3af;
+  --dim: #667085;
+  --line: rgba(255, 255, 255, 0.08);
+  --violet: #8b5cf6;
+  --cyan: #22d3ee;
+  --mint: #22c55e;
+  --amber: #f59e0b;
+  --risk: #ef4444;
+  --glow: rgba(139, 92, 246, 0.18);
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-jakarta);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-line: var(--line);
+  --color-violet: var(--violet);
+  --color-cyan: var(--cyan);
+  --color-mint: var(--mint);
+  --color-amber: var(--amber);
+  --color-risk: var(--risk);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-syne);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  letter-spacing: -0.011em;
+}
+
+h1,
+h2,
+.display {
+  font-family: var(--font-syne), Syne, sans-serif;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+}
+
+.glass {
+  background: rgba(17, 21, 27, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.hairline {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 52%, #22d3ee 160%);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.28);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 32px rgba(139, 92, 246, 0.42);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.18s ease;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.btn-ghost:active {
+  transform: scale(0.97);
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+}
+
+.orbit-ring {
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.12), transparent 58%);
+}
+
+.text-dim {
+  color: var(--dim);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+input,
+textarea {
+  color: var(--ink);
+}
+
+input[type="range"] {
+  accent-color: #8b5cf6;
+}
+
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(12px, -18px, 0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.18; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes core-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.08); opacity: 0.9; }
+}
+
+@keyframes dash-flow {
+  to { stroke-dashoffset: -24; }
+}
+
+.anim-spin-slow {
+  animation: spin-slow 48s linear infinite;
+}
+
+.anim-spin-slower {
+  animation: spin-slow 80s linear infinite reverse;
+}
+
+.anim-breathe {
+  animation: core-breathe 4.2s ease-in-out infinite;
+}
+
+.anim-pulse-line {
+  animation: pulse-line 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-spin-slow,
+  .anim-spin-slower,
+  .anim-breathe,
+  .anim-pulse-line {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

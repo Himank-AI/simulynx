@@ -1,0 +1,12 @@
+policy_type,office_days,role_type,seniority,work_style,accessibility_requirement,flexibility_preference,commute_burden,career_stage,inclusion_outcome,adoption_outcome,retention_risk
+work-model,5,design,mid,hybrid,16,88,78,1,61,55,48
+work-model,5,engineering,mid,remote,10,76,62,1,64,58,44
+work-model,5,people,senior,hybrid,14,54,48,2,78,74,28
+work-model,5,strategy,early,office,8,28,32,0,84,86,18
+work-model,5,marketing,senior,hybrid,20,92,70,2,58,52,56
+work-model,5,engineering,lead,hybrid,12,42,40,3,82,80,24
+work-model,5,brand,mid,hybrid,88,74,84,1,48,44,62
+work-model,3,design,mid,hybrid,16,88,78,1,80,78,26
+work-model,3,engineering,mid,remote,10,76,62,1,79,76,24
+work-model,3,brand,mid,hybrid,88,74,84,1,71,68,34
+work-model,0,analytics,senior,remote,18,96,90,2,86,84,16
