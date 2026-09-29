@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #f5f7fa;
+  --color-ink-900: #e7edf4;
+  --color-ink-800: #d5dee8;
+  --color-ink-700: #c3ceda;
+  --color-ink-600: #a8b3c0;
+  --color-ink-500: #7f8b9a;
+  --color-ink-400: #6a7684;
+  --color-ink-300: #4c5866;
+  --color-ink-200: #243040;
+  --color-line: #243040;
+  --color-canvas: #05070a;
+  --color-surface: #0f151e;
+  --color-surface-2: #0b1017;
+  --color-void: #080c12;
+  --color-brand-50: #102833;
+  --color-brand-100: #143848;
+  --color-brand-500: #35d6ff;
+  --color-brand-600: #1ec4f0;
+  --color-brand-700: #8be7ff;
+  --color-good-50: #0d2a22;
+  --color-good-700: #36e0a0;
+  --color-warn-50: #2c2212;
+  --color-warn-700: #ffb84d;
+  --color-bad-50: #2c1518;
+  --color-bad-700: #ff5c67;
+  --color-blue-500: #4f7cff;
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.28);
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(1000px 560px at 50% 42%, rgba(53, 214, 255, 0.05), transparent 62%),
+    radial-gradient(720px 420px at 82% 88%, rgba(79, 124, 255, 0.05), transparent 58%);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(53, 214, 255, 0.28);
+  color: #f5f7fa;
+}
+
+.glass {
+  background: rgba(10, 15, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enter {
+  animation: enter 180ms ease-out;
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.drawer-in {
+  animation: drawer-in 240ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter {
+    animation: none;
+  }
+}
+
+input[type="range"] {
+  accent-color: #35d6ff;
+}
+
+select option {
+  background: #0f151e;
+  color: #f5f7fa;
+}
+
+* {
+  scrollbar-color: #243040 transparent;
+}
