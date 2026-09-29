@@ -1,2 +1,0 @@
-ID,name,workforce,digitalPersonas,reskillingInventory,redeploymentInventory,description
-org-demo,Demo Enterprise,24680,2400,1126,486,"Synthetic enterprise used by the Simulynx simulation environment. Inventory totals are part of the local dataset, not a live HR extract."
