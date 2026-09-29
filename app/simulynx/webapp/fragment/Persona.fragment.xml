@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Dialog id="personaDialog" title="{persona>/personaId}" contentWidth="28rem" class="sxFloat">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <Text text="Synthetic persona. Simulation result — not a prediction." class="sxDisclaimer" />
+        <Title text="{persona>/roleName}" level="H3" />
+        <Text text="{persona>/departmentName} · {persona>/location} · {persona>/careerStage}" />
+        <ObjectStatus text="{persona>/pathwayLabel}" state="{persona>/state}" />
+        <Label text="Workload" />
+        <Text text="{persona>/workload}" />
+        <Label text="Learning capacity" />
+        <Text text="{persona>/learningCapacity}" />
+        <Label text="Mobility" />
+        <Text text="{persona>/mobilityPotential}" />
+        <Label text="Skill gap" />
+        <Text text="{persona>/skillGapLabel}" />
+        <Label text="Transition score" />
+        <Text text="{persona>/transitionScore}" />
+        <Text text="{persona>/rationale}" />
+      </VBox>
+    </content>
+    <endButton>
+      <Button text="Close" press=".onClosePersona" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

@@ -2,28 +2,35 @@
   "name": "simulynx",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc -b --pretty false"
+    "build:ui": "tsc -p app/simulynx/tsconfig.json",
+    "prestart": "npm run build:ui && node scripts/ensure-db.mjs",
+    "deploy": "cds deploy --to sqlite:db.sqlite",
+    "start": "cds-tsx serve",
+    "watch": "cds-tsx watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit --pretty false && tsc -p app/simulynx/tsconfig.json --pretty false",
+    "check": "tsx test/check.ts"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.487.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.2",
-    "recharts": "^2.15.3"
+    "@cap-js/sqlite": "^1.7.0",
+    "@sap/cds": "^8.6.0",
+    "express": "^4.21.2"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.8",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
-    "@vitejs/plugin-react": "^4.5.2",
-    "tailwindcss": "^4.1.8",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "@sap/cds-dk": "^8.6.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,39 @@
+<mvc:View
+  controllerName="simulynx.controller.App"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:tnt="sap.tnt"
+  displayBlock="true"
+  height="100%">
+  <tnt:ToolPage id="toolPage">
+    <tnt:header>
+      <tnt:ToolHeader>
+        <Title text="SIMULYNX" class="sxBrand" />
+        <Text text="SIMULATE BEFORE YOU COMMIT" class="sxMuted" />
+        <ToolbarSpacer />
+        <Text text="{app>/disclaimer}" class="sxDisclaimer" />
+      </tnt:ToolHeader>
+    </tnt:header>
+    <tnt:sideContent>
+      <tnt:SideNavigation id="sideNav" selectedKey="overview" itemSelect=".onNav">
+        <tnt:NavigationList id="navList">
+          <tnt:NavigationListItem text="Overview" icon="sap-icon://home" key="overview" />
+          <tnt:NavigationListItem text="Digital Workforce" icon="sap-icon://overview-chart" key="workforce" />
+          <tnt:NavigationListItem text="Personas" icon="sap-icon://person-placeholder" key="personas" />
+          <tnt:NavigationListItem text="Scenario Studio" icon="sap-icon://write-new" key="studio" />
+          <tnt:NavigationListItem text="Simulations" icon="sap-icon://play" key="simulations" />
+          <tnt:NavigationListItem text="Scenario Comparison" icon="sap-icon://compare" key="compare" />
+          <tnt:NavigationListItem text="Skills &amp; Mobility" icon="sap-icon://journey-change" key="skills" />
+          <tnt:NavigationListItem text="Stress Test" icon="sap-icon://warning" key="stress" />
+          <tnt:NavigationListItem text="Decision Brief" icon="sap-icon://document-text" key="brief" />
+          <tnt:NavigationListItem text="History" icon="sap-icon://history" key="history" />
+          <tnt:NavigationListItem text="Joule" icon="sap-icon://discussion" key="joule" />
+          <tnt:NavigationListItem text="Settings" icon="sap-icon://action-settings" key="settings" />
+        </tnt:NavigationList>
+      </tnt:SideNavigation>
+    </tnt:sideContent>
+    <tnt:mainContents>
+      <NavContainer id="nav" />
+    </tnt:mainContents>
+  </tnt:ToolPage>
+</mvc:View>

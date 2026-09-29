@@ -1,0 +1,72 @@
+<mvc:View controllerName="simulynx.controller.Compare" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" height="100%">
+  <Page title="Scenario Comparison" backgroundDesign="Solid" enableScrolling="true">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <MessageStrip text="Simulation result — not a prediction. Simulynx does not rank these scenarios." type="Warning" showIcon="true" />
+        <Table items="{compare>/runs}">
+          <columns>
+            <Column><Text text="Scenario" /></Column>
+            <Column><Text text="Affected" /></Column>
+            <Column><Text text="Reskill" /></Column>
+            <Column><Text text="Redeploy" /></Column>
+            <Column><Text text="High risk" /></Column>
+            <Column><Text text="Readiness" /></Column>
+            <Column><Text text="Risk" /></Column>
+            <Column><Text text="Horizon" /></Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{compare>name}" />
+                <Text text="{compare>affectedText}" />
+                <Text text="{compare>reskillText}" />
+                <Text text="{compare>redeployText}" />
+                <Text text="{compare>highText}" />
+                <Text text="{compare>skillReadiness}" />
+                <Text text="{compare>transitionRisk}" />
+                <Text text="{compare>horizonText}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+        <Title text="What if?" level="H3" />
+        <Text text="The counterfactual is calculated by CounterfactualService and stored. It does not replace the committed run." />
+        <HBox alignItems="Center">
+          <Label text="Automation" class="sapUiTinyMarginEnd" />
+          <Select id="automation" selectedKey="20" class="sapUiTinyMarginEnd">
+            <core:Item key="10" text="10%" />
+            <core:Item key="20" text="20%" />
+            <core:Item key="30" text="30%" />
+            <core:Item key="40" text="40%" />
+          </Select>
+          <Label text="Training" class="sapUiTinyMarginEnd" />
+          <Select id="training" selectedKey="70" class="sapUiTinyMarginEnd">
+            <core:Item key="50" text="50%" />
+            <core:Item key="70" text="70%" />
+            <core:Item key="90" text="90%" />
+            <core:Item key="100" text="100%" />
+          </Select>
+          <Label text="Redeploy" class="sapUiTinyMarginEnd" />
+          <Select id="redeploy" selectedKey="Medium" class="sapUiTinyMarginEnd">
+            <core:Item key="Low" text="Low" />
+            <core:Item key="Medium" text="Medium" />
+            <core:Item key="High" text="High" />
+          </Select>
+          <Label text="Reskill" class="sapUiTinyMarginEnd" />
+          <Select id="reskill" selectedKey="Medium" class="sapUiTinyMarginEnd">
+            <core:Item key="Low" text="Low" />
+            <core:Item key="Medium" text="Medium" />
+            <core:Item key="High" text="High" />
+          </Select>
+          <Button text="Run alternative" press=".onAlternative" type="Emphasized" />
+        </HBox>
+        <MessageStrip text="{compare>/error}" type="Error" visible="{= !!${compare>/error} }" showIcon="true" />
+        <Panel headerText="{compare>/question}" visible="{compare>/hasAlternative}">
+          <Text text="Committed affected {compare>/base/affectedText}. Alternative affected {compare>/alt/affectedText}." />
+          <Text text="High transition risk {compare>/base/highText} → {compare>/alt/highText}. Readiness {compare>/base/skillReadiness} → {compare>/alt/skillReadiness}." />
+          <Text text="Risk {compare>/base/transitionRisk} → {compare>/alt/transitionRisk}. Horizon {compare>/base/horizonText} → {compare>/alt/horizonText}." />
+        </Panel>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

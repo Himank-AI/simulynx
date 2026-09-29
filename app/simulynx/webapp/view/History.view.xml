@@ -1,0 +1,28 @@
+<mvc:View controllerName="simulynx.controller.History" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%">
+  <Page title="History" backgroundDesign="Solid">
+    <content>
+      <Table id="history" items="{path: 'sim>/Runs', parameters: { $filter: 'committed eq true', $orderby: 'completedAt desc', $expand: 'scenario' }}">
+        <columns>
+          <Column><Text text="Completed" /></Column>
+          <Column><Text text="Scenario" /></Column>
+          <Column><Text text="Affected" /></Column>
+          <Column><Text text="Risk" /></Column>
+          <Column><Text text="Readiness" /></Column>
+          <Column><Text text="Active" /></Column>
+        </columns>
+        <items>
+          <ColumnListItem type="Navigation" press=".onOpen">
+            <cells>
+              <Text text="{sim>completedAt}" />
+              <Text text="{sim>scenario/name}" />
+              <Text text="{sim>affected}" />
+              <Text text="{sim>transitionRisk}" />
+              <Text text="{sim>skillReadiness}" />
+              <Text text="{= ${sim>active} ? 'Committed' : '' }" />
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

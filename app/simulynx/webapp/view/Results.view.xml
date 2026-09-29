@@ -1,0 +1,71 @@
+<mvc:View controllerName="simulynx.controller.Results" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%">
+  <Page title="Simulation" backgroundDesign="Solid" enableScrolling="true">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <MessageStrip text="Simulation result — not a prediction." type="Warning" showIcon="true" />
+        <Title text="{result>/scenario/name}" />
+        <Text text="{result>/scenario/rawPrompt}" />
+        <HBox>
+          <GenericTile header="Affected" subheader="{result>/run/affectedText}" class="sapUiTinyMarginEnd" />
+          <GenericTile header="Reskill" subheader="{result>/run/reskillText}" class="sapUiTinyMarginEnd" />
+          <GenericTile header="Redeploy" subheader="{result>/run/redeployText}" class="sapUiTinyMarginEnd" />
+          <GenericTile header="Readiness" subheader="{result>/run/skillReadiness}" class="sapUiTinyMarginEnd" />
+          <GenericTile header="Risk" subheader="{result>/run/transitionRisk}" />
+        </HBox>
+        <Text text="{result>/run/riskDriver}" />
+        <Title text="Pathways" level="H3" />
+        <List items="{result>/pathways}">
+          <CustomListItem>
+            <HBox alignItems="Center" class="sapUiTinyMargin">
+              <Text text="{result>label}" width="12rem" />
+              <Text text="{result>countText}" />
+            </HBox>
+          </CustomListItem>
+        </List>
+        <Title text="Department impact" level="H3" />
+        <Table items="{result>/impacts}">
+          <columns>
+            <Column><Text text="Department" /></Column>
+            <Column><Text text="Kind" /></Column>
+            <Column><Text text="Affected" /></Column>
+            <Column><Text text="Strain" /></Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{result>name}" />
+                <Text text="{result>kind}" />
+                <Text text="{result>affected}" />
+                <Text text="{result>capacityStrain}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+        <Title text="Representative personas" level="H3" />
+        <Text text="This table is the representative synthetic set used by the engine. Scaled pathway counts above are the enterprise figures." class="sxMuted" />
+        <Table items="{result>/outcomes}">
+          <columns>
+            <Column><Text text="Persona" /></Column>
+            <Column><Text text="Role" /></Column>
+            <Column><Text text="Scope" /></Column>
+            <Column><Text text="Pathway" /></Column>
+            <Column><Text text="Score" /></Column>
+            <Column><Text text="Gap" /></Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{result>personaId}" />
+                <Text text="{result>roleName}" />
+                <Text text="{result>scope}" />
+                <Text text="{result>pathwayLabel}" />
+                <Text text="{result>transitionScore}" />
+                <Text text="{result>skillGapLabel}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

@@ -1,0 +1,7 @@
+ID,title,narrative,estimatedLearningMonths,mobilityCompatibility,referencePersona_ID
+path-cs-ai,Support into AI operations,"A modeled path from case work into oversight of AI-assisted support, then into AI operations.",7,Medium,P-1042
+path-cs-success,Support into customer success,A modeled path that keeps customer contact and moves it from cases into adoption and retention.,6,Medium,P-1014
+path-cs-lead,Senior support into management,"A leadership path for senior specialists. It depends on people leadership, not only case skill.",8,Medium,P-1026
+path-eng-ai,Engineering into AI engineering,A modeled path for software engineers whose current stack is close to AI engineering work.,9,High,P-1102
+path-fin,Analyst into FP&A partner,A finance path. Mobility compatibility is low because the receiving seats are few.,8,Low,P-1302
+path-ops,Operations into process analysis,A path from running a process to analyzing and redesigning it.,6,Medium,P-1502

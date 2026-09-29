@@ -1,0 +1,17 @@
+<mvc:View controllerName="simulynx.controller.Brief" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%">
+  <Page title="Decision Brief" backgroundDesign="Solid" enableScrolling="true">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <MessageStrip text="Prepared by the mock analytics adapter. Not published to SAP Analytics Cloud. A person still makes the decision." type="Information" showIcon="true" />
+        <FormattedText htmlText="{brief>/html}" class="sxMarkdown" />
+      </VBox>
+    </content>
+    <footer>
+      <OverflowToolbar>
+        <ToolbarSpacer />
+        <Title text="HUMAN DECISION REQUIRED" />
+        <ToolbarSpacer />
+      </OverflowToolbar>
+    </footer>
+  </Page>
+</mvc:View>

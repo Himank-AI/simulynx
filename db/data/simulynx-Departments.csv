@@ -1,0 +1,9 @@
+ID,name,headcount,personaModelCount,mobilityPotential,riskExposure,readiness,summary
+dep-tech,Technology,5420,527,High,Moderate,72,"Builds and runs the systems other departments depend on, including integration and automation."
+dep-cs,Customer Support,4210,409,Medium,Elevated,64,Handles case volume across regions. The active demo decision is aimed at this department.
+dep-sales,Sales,3480,338,Medium,Moderate,66,Carries revenue roles and the customer-success paths used as receiving capacity.
+dep-fin,Finance,1960,191,Low,Low,70,Planning and control work with lower internal mobility in the current model.
+dep-hr,Human Resources,840,82,Medium,Low,68,Designs mobility and learning responses when a workforce decision changes the work.
+dep-ops,Operations,4640,451,Medium,Moderate,61,Runs delivery processes that can receive work or take on redesigned operating roles.
+dep-product,Product,1720,167,High,Low,73,Owns product decisions that sit next to automation and customer workflow changes.
+dep-mkt,Marketing,2410,235,Medium,Moderate,63,Campaign and content operations with a modeled gap in analytics-heavy work.

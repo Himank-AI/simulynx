@@ -1,0 +1,95 @@
+html,
+body,
+.sapUiBody {
+  background: #05070a !important;
+  color: #f5f7fa;
+}
+
+.sapTntToolPage,
+.sapTntToolPageContentWrapper,
+.sapMPage,
+.sapMPageBgStandard,
+.sapMPageEnableScrolling {
+  background: #05070a !important;
+}
+
+.sapTntSideNavigation,
+.sapTntNavLIItem {
+  background: #080c12 !important;
+}
+
+.sxBrand {
+  color: #35d6ff !important;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+.sxMuted {
+  color: #7f8b9a !important;
+}
+
+.sxStage {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  background: #05070a;
+}
+
+.sxCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sxFloat {
+  background: rgba(10, 15, 22, 0.72) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+}
+
+.sxCoreReadout {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sxCoreValue {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 2.4rem;
+  color: #f5f7fa;
+}
+
+.sxBar {
+  height: 8px;
+  border-radius: 99px;
+  background: #121820;
+  overflow: hidden;
+}
+
+.sxBar > span {
+  display: block;
+  height: 100%;
+  background: #35d6ff;
+}
+
+.sxGood { color: #36e0a0 !important; }
+.sxWarn { color: #ffb84d !important; }
+.sxBad { color: #ff5c67 !important; }
+
+.sxDisclaimer {
+  color: #ffb84d !important;
+  font-size: 0.75rem;
+}
+
+.sxMarkdown {
+  white-space: pre-wrap;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.45;
+}

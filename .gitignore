@@ -3,5 +3,10 @@ dist
 .DS_Store
 *.local
 .vite
+gen
+db.sqlite
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
 tsconfig.app.tsbuildinfo
 tsconfig.node.tsbuildinfo

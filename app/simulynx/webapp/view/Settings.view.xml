@@ -1,0 +1,20 @@
+<mvc:View controllerName="simulynx.controller.Settings" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%">
+  <Page title="Settings" backgroundDesign="Solid" enableScrolling="true">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <Title text="SIMULYNX" />
+        <Text text="Explore workforce decisions before they become real-world consequences." />
+        <Text text="Digital Workforce Simulation Platform. Synthetic Demo Enterprise data only." class="sxMuted" />
+        <List items="{settings>/cards}">
+          <CustomListItem>
+            <VBox class="sapUiSmallMargin">
+              <Title text="{settings>title}" level="H4" />
+              <ObjectStatus text="{= ${settings>connected} ? 'Connected' : 'Not connected' }" state="{= ${settings>connected} ? 'Success' : 'Warning' }" />
+              <Text text="{settings>note}" />
+            </VBox>
+          </CustomListItem>
+        </List>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

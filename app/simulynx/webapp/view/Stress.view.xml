@@ -1,0 +1,21 @@
+<mvc:View controllerName="simulynx.controller.Stress" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%">
+  <Page title="Stress Test" backgroundDesign="Solid" enableScrolling="true">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <MessageStrip text="Each case re-ran the simulation engine when the committed run was stored. Simulation result — not a prediction." type="Warning" showIcon="true" />
+        <Title text="{stress>/scenario}" />
+        <List items="{stress>/factors}">
+          <CustomListItem>
+            <VBox class="sapUiSmallMargin">
+              <Title text="{stress>title}" level="H4" />
+              <ObjectStatus text="Sensitivity {stress>sensitivity}" state="{= ${stress>sensitivity} === 'High' ? 'Error' : 'Warning' }" />
+              <ObjectStatus text="Severity {stress>severity}" state="{= ${stress>severity} === 'High' ? 'Error' : 'Warning' }" />
+              <Text text="{stress>assumption}" />
+              <Text text="{stress>effect}" />
+            </VBox>
+          </CustomListItem>
+        </List>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

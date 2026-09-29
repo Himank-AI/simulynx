@@ -1,0 +1,34 @@
+<mvc:View controllerName="simulynx.controller.Skills" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%">
+  <Page title="Skills &amp; Mobility" backgroundDesign="Solid" enableScrolling="true">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <Title text="Skill shift in the committed simulation" level="H3" />
+        <Text text="Current: {skills>/current}" />
+        <Text text="Future: {skills>/future}" />
+        <Title text="Career paths" level="H3" />
+        <List items="{skills>/paths}">
+          <StandardListItem title="{skills>title}" description="{skills>narrative}" info="{skills>months}" />
+        </List>
+        <Title text="Mobility options" level="H3" />
+        <Table items="{skills>/mobility}">
+          <columns>
+            <Column><Text text="Persona" /></Column>
+            <Column><Text text="Target role" /></Column>
+            <Column><Text text="Department" /></Column>
+            <Column><Text text="Compatibility" /></Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{skills>persona_ID}" />
+                <Text text="{skills>targetRole/name}" />
+                <Text text="{skills>targetDepartment/name}" />
+                <Text text="{skills>compatibility}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

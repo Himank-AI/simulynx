@@ -1,0 +1,31 @@
+ID,name,category
+sk-comm,Customer Communication,core
+sk-case,Case Management,core
+sk-process,Process Knowledge,core
+sk-ai-support,AI-assisted support,emerging
+sk-oversight,Automation Oversight,emerging
+sk-data,Data Interpretation,emerging
+sk-crm,CRM Administration,domain
+sk-triage,Incident Triage,core
+sk-km,Knowledge Management,core
+sk-qa,Quality Assurance,core
+sk-python,Python,domain
+sk-sql,SQL,domain
+sk-cloud,Cloud Architecture,domain
+sk-sap,SAP Integration,domain
+sk-analytics,Product Analytics,domain
+sk-stake,Stakeholder Management,leadership
+sk-wfp,Workforce Planning,domain
+sk-learning,Learning Design,domain
+sk-fin,Financial Analysis,domain
+sk-forecast,Forecasting,domain
+sk-pipeline,Pipeline Management,domain
+sk-negotiation,Negotiation,core
+sk-campaign,Campaign Operations,domain
+sk-content,Content Systems,domain
+sk-improve,Process Improvement,core
+sk-supply,Supply Coordination,domain
+sk-change,Change Management,leadership
+sk-lead,People Leadership,leadership
+sk-success,Customer Success,core
+sk-ai-eng,AI Engineering,emerging
