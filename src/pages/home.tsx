@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { DigitalEarth } from '../components/digital-earth.tsx'
 import { Button } from '../components/ui.tsx'
 import { runSimulation } from '../services/simulation/simulationEngine.ts'
@@ -5,13 +6,15 @@ import { getDepartment } from '../services/workforce/workforceService.ts'
 import { useStore } from '../state/store.tsx'
 
 export function ExecutiveHome() {
+  const navigate = useNavigate()
   const store = useStore()
   const built = store.studio.built
   const department = built ? getDepartment(built.departmentId).name : null
 
   function checkSimulation() {
     if (!built || store.vizStartedAt) return
-    store.launchSimulation(built, runSimulation(built))
+    store.commitRun(built, runSimulation(built))
+    navigate('/simulations')
   }
 
   return (
