@@ -30,7 +30,7 @@ export function ScenarioStudio() {
     if (!studio.built || store.vizStartedAt) return
     const scenario = studio.built
     store.launchSimulation(scenario, runSimulation(scenario))
-    navigate('/')
+    navigate('/overview')
   }
 
   const draft = studio.draft
@@ -141,7 +141,14 @@ export function ScenarioStudio() {
               </div>
             </fieldset>
             <div className="mt-4 flex flex-wrap gap-2">
-              <Button variant="secondary" disabled={!canBuild} onClick={store.buildScenario}>
+              <Button
+                variant="secondary"
+                disabled={!canBuild}
+                onClick={() => {
+                  store.buildScenario()
+                  navigate('/overview')
+                }}
+              >
                 Build Scenario
               </Button>
               <Button disabled={!studio.built} onClick={run}>

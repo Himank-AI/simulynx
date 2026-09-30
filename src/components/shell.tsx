@@ -27,7 +27,7 @@ import { PersonaDrawer } from './persona-drawer.tsx'
 import { VizDirector } from './viz-director.tsx'
 
 const NAV = [
-  { to: '/', label: 'Overview', icon: LayoutDashboard },
+  { to: '/overview', label: 'Overview', icon: LayoutDashboard },
   { to: '/workforce', label: 'Digital Workforce', icon: Network },
   { to: '/personas', label: 'Personas', icon: Users },
   { to: '/studio', label: 'Scenario Studio', icon: Workflow },
@@ -41,7 +41,8 @@ const NAV = [
 ]
 
 const TITLES: Record<string, string> = {
-  '/': 'Overview',
+  '/': 'Scenario Studio',
+  '/overview': 'Overview',
   '/workforce': 'Digital Workforce',
   '/personas': 'Personas',
   '/studio': 'Scenario Studio',
@@ -99,7 +100,7 @@ export function Shell() {
         if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return
         event.preventDefault()
         const earthSearch = document.getElementById('earth-search')
-        if (location.pathname === '/' && earthSearch instanceof HTMLInputElement) earthSearch.focus()
+        if (location.pathname === '/overview' && earthSearch instanceof HTMLInputElement) earthSearch.focus()
         else searchRef.current?.focus()
       }
     }
@@ -107,7 +108,7 @@ export function Shell() {
     return () => window.removeEventListener('keydown', onKey)
   }, [store, location.pathname])
 
-  const earth = location.pathname === '/'
+  const earth = location.pathname === '/overview'
   const hits = useMemo(() => searchHits(query, store.history), [query, store.history])
 
   const notifications = [
