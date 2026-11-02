@@ -53,3 +53,6 @@ Application (Next.js)
 Personas are synthetic. The product never ranks real employees, never recommends firing, never infers protected characteristics, and never makes promotion or hiring decisions about individuals.
 
 Simulated workforce insights are directional and should be validated with real employees and appropriate HR/legal processes.
+
+
+Teammate- Riyan Kandhari 
